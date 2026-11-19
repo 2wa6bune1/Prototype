@@ -357,6 +357,67 @@
     @media(max-width:820px){#writing-map-demo .wm-chat-focus-node{width:112px;height:78px;padding:7px 9px;border-radius:9px}#writing-map-demo .wm-chat-focus-node .wm-node-textbox .wm-node-title{font-size:12px;line-height:1.45;-webkit-line-clamp:3}}
     @media(max-width:430px){#writing-map-demo .wm-chat-focus-node{width:84px;height:64px;padding:5px 7px;border-radius:8px}#writing-map-demo .wm-chat-focus-node .wm-node-textbox .wm-node-title{font-size:11px;line-height:1.4;-webkit-line-clamp:3}}
 
+    /* A shared right rail keeps the map available during node conversations. */
+    #writing-map-demo .wm-side{width:clamp(360px,40%,460px);padding:0;height:680px;max-height:680px;overflow:hidden}
+    #writing-map-demo .wm-side-switch{display:flex;align-items:stretch;flex-shrink:0;min-height:50px;border-bottom:1px solid var(--wm-line);background:var(--wm-paper)}
+    #writing-map-demo .wm-side-tab{display:flex;align-items:center;justify-content:center;gap:7px;flex:1;min-width:0;padding:12px 10px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--wm-dim);font-size:13px;font-weight:500;white-space:nowrap}
+    #writing-map-demo .wm-side-tab[aria-selected=true]{border-bottom-color:var(--wm-green);background:var(--wm-tint);color:var(--wm-green)}
+    #writing-map-demo .wm-side-tab:hover:not(:disabled){background:var(--wm-soft);color:var(--wm-ink)}
+    #writing-map-demo .wm-side-tab:disabled{opacity:.5;cursor:default}
+    #writing-map-demo .wm-side-tab [data-ui=pin-count]{font-size:11px;padding:1px 6px;border-radius:5px;background:var(--wm-soft);color:var(--wm-ink)}
+    #writing-map-demo .wm-pins-panel{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden;padding:21px 22px}
+    #writing-map-demo .wm-map{height:680px}
+    #writing-map-demo .wm-sidebar-chat{display:flex;flex:1;flex-direction:column;min-width:0;min-height:0;overflow:hidden}
+    #writing-map-demo .wm-sidebar-chat .wm-chat-panel{display:flex;flex-direction:column;flex:1;min-height:0;width:100%;height:100%;border:0;border-radius:0;background:var(--wm-paper);box-shadow:none;overflow:hidden}
+    #writing-map-demo .wm-chat-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:17px 18px 14px;flex-shrink:0}
+    #writing-map-demo .wm-chat-heading>div{min-width:0}
+    #writing-map-demo .wm-chat-heading .wm-small{font-size:11px;color:var(--wm-green);margin-bottom:6px}
+    #writing-map-demo .wm-chat-heading h3{font-size:16px;font-weight:500;line-height:1.55;overflow-wrap:anywhere;max-height:100px;overflow:auto}
+    #writing-map-demo .wm-chat-heading .wm-close{flex-shrink:0}
+    #writing-map-demo .wm-sidebar-chat .wm-chat-focus{display:block;min-height:0;padding:0;border-top:1px solid var(--wm-line);border-bottom:1px solid var(--wm-line);background:var(--wm-bg);flex-shrink:0}
+    #writing-map-demo .wm-chat-context summary{padding:9px 18px;font-size:12px;color:var(--wm-dim)}
+    #writing-map-demo .wm-chat-context summary:hover{color:var(--wm-ink)}
+    #writing-map-demo .wm-sidebar-chat .wm-chat-focus-content{padding:0 18px 13px;max-height:156px;overflow:auto;font-size:13px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}
+    #writing-map-demo .wm-sidebar-chat .wm-tabs{padding:0 10px;flex-shrink:0}
+    #writing-map-demo .wm-sidebar-chat .wm-tab{font-size:13px;padding:10px 12px}
+    #writing-map-demo .wm-sidebar-chat .wm-chat-view{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+    #writing-map-demo .wm-sidebar-chat .wm-messages{padding:18px;min-height:100px;flex:1;overflow:auto;overscroll-behavior:contain}
+    #writing-map-demo .wm-sidebar-chat .wm-message{font-size:14px;line-height:1.85;padding-bottom:19px}
+    #writing-map-demo .wm-sidebar-chat .wm-message.wm-user{margin-left:10px}
+    #writing-map-demo .wm-sidebar-chat .wm-quick{padding:7px 14px 3px;gap:6px;flex-shrink:0}
+    #writing-map-demo .wm-sidebar-chat .wm-quick button{font-size:12px;padding:5px 8px}
+    #writing-map-demo .wm-sidebar-chat .wm-compose{padding:9px 14px 11px;flex-shrink:0}
+    #writing-map-demo .wm-sidebar-chat .wm-compose textarea{min-height:60px;max-height:110px;font-size:14px;line-height:1.6}
+    #writing-map-demo .wm-sidebar-chat .wm-compose-note{font-size:11px;margin-top:6px}
+    #writing-map-demo .wm-sidebar-chat .wm-tab-content{padding:17px 18px;flex:1;min-height:0;overflow:auto}
+    #writing-map-demo .wm-node.wm-chatting{border-color:var(--wm-green);box-shadow:0 0 0 3px var(--wm-tint),0 5px 16px var(--wm-shadow)}
+    #writing-map-demo .wm-node.wm-chatting::after{content:'대화 중';position:absolute;top:-12px;right:10px;padding:2px 7px;border-radius:5px;background:var(--wm-green);color:var(--wm-on);font-size:11px;line-height:1.5;pointer-events:none}
+    @media(min-width:761px) and (max-width:980px){#writing-map-demo .wm-pins-panel{padding:19px 16px}}
+    @media(max-width:760px){#writing-map-demo .wm-side{width:100%;height:660px;min-height:660px;max-height:660px;padding:0}#writing-map-demo .wm-pins-panel{padding:18px 20px}#writing-map-demo .wm-map{height:470px}}
+    @media(max-width:430px){#writing-map-demo .wm-pins-panel{padding:17px 16px}#writing-map-demo .wm-chat-heading{padding:15px 14px 12px}#writing-map-demo .wm-chat-heading h3{font-size:15px}#writing-map-demo .wm-sidebar-chat .wm-messages{padding:15px}#writing-map-demo .wm-sidebar-chat .wm-compose{padding-left:12px;padding-right:12px}}
+    @media(pointer:coarse){#writing-map-demo .wm-side-tab,#writing-map-demo .wm-sidebar-chat .wm-quick button{min-height:44px}#writing-map-demo .wm-chat-heading .wm-close{min-width:44px;min-height:44px}}
+
+    #writing-map-demo .wm-menu-backdrop{display:none!important}
+    #writing-map-demo .wm-orbit-layer{pointer-events:none}
+    #writing-map-demo .wm-node.wm-menu-active{border-color:var(--wm-green);box-shadow:0 0 0 3px var(--wm-tint),0 7px 18px var(--wm-shadow)}
+    #writing-map-demo .wm-hover-menu{position:absolute;pointer-events:auto;display:flex;flex-direction:column;gap:8px;max-width:calc(100% - 24px);padding:8px;background:var(--wm-menu-bg);color:var(--wm-menu-text);border:1px solid light-dark(#1d2028,#4a5261);border-radius:12px;box-shadow:0 12px 32px var(--wm-shadow);isolation:isolate}
+    #writing-map-demo .wm-hover-heading{display:flex;align-items:center;gap:8px;min-width:0;min-height:28px;padding-left:4px}
+    #writing-map-demo .wm-hover-heading>span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:1.5;color:var(--wm-menu-muted)}
+    #writing-map-demo .wm-hover-close{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:28px;height:28px;padding:0;border:0;border-radius:6px;background:transparent;color:var(--wm-menu-text);font-size:21px;line-height:1}
+    #writing-map-demo .wm-hover-close:hover{background:var(--wm-menu-hover)}
+    #writing-map-demo .wm-hover-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+    #writing-map-demo .wm-hover-action{display:flex;align-items:center;justify-content:center;min-width:0;min-height:38px;padding:7px 8px;border:1px solid light-dark(#ffffff26,#ffffff24);border-radius:7px;background:transparent;color:var(--wm-menu-text);font-size:13px;font-weight:500;line-height:1.4;white-space:nowrap}
+    #writing-map-demo .wm-hover-action:hover,#writing-map-demo .wm-hover-action:focus-visible,#writing-map-demo .wm-hover-action[aria-pressed=true]{background:var(--wm-menu-hover);border-color:var(--wm-menu-hover);color:var(--wm-menu-text)}
+    @media(pointer:coarse){#writing-map-demo .wm-hover-action{min-height:44px}#writing-map-demo .wm-hover-close{width:44px;height:44px}}
+
+    #writing-map-demo .wm-chat-heading>div{flex:1}
+    #writing-map-demo .wm-chat-node-switcher{margin-bottom:12px}
+    #writing-map-demo .wm-chat-node-switcher label{display:block;font-size:11px;line-height:1.5;color:var(--wm-dim);margin-bottom:5px}
+    #writing-map-demo .wm-chat-node-select{display:block;width:100%;min-width:0;max-width:100%;min-height:36px;padding:7px 9px;border:1px solid var(--wm-border-strong);border-radius:7px;background:var(--wm-paper);color:var(--wm-ink);font-family:inherit;font-size:13px;line-height:1.5;text-overflow:ellipsis}
+    #writing-map-demo .wm-hover-edit{display:flex;align-items:center;justify-content:center;flex-shrink:0;min-height:28px;padding:4px 7px;border:1px solid light-dark(#ffffff26,#ffffff24);border-radius:6px;background:transparent;color:var(--wm-menu-text);font-size:11px;line-height:1.5;white-space:nowrap}
+    #writing-map-demo .wm-hover-edit:hover,#writing-map-demo .wm-hover-edit:focus-visible{background:var(--wm-menu-hover);border-color:var(--wm-menu-hover)}
+    @media(pointer:coarse){#writing-map-demo .wm-chat-node-select{min-height:44px;font-size:16px}#writing-map-demo .wm-hover-edit{min-height:44px}}
+
   </style>
   <section class="wm-home" data-ui="home">
     <div class="wm-home-space"><h1>26-2 HCI 이론 및 실습 4조 프로토타입</h1></div>
@@ -376,8 +437,15 @@
     <div class="wm-work-head"><div><h2></h2><p data-ui="workspace-sub"></p></div><div class="wm-work-actions"><button type="button" class="wm-btn" data-action="original">처음 입력</button><button type="button" class="wm-btn" data-action="home">다른 주제로 시작</button></div></div>
     <div class="wm-guide"><span data-ui="guide-text"></span><button type="button" class="wm-btn wm-quiet" data-action="guide" data-ui="guide-button"></button></div>
     <div class="wm-layout">
-      <div class="wm-map-wrap"><div class="wm-map" data-ui="map" role="region" aria-label="생각 지도. 빈 곳을 드래그해 이동하고 각 노드의 버튼으로 탐색하세요."><div class="wm-world" data-ui="world"><svg class="wm-links" data-ui="links" aria-hidden="true"></svg><div data-ui="nodes"></div></div></div><button type="button" class="wm-menu-backdrop" data-ui="menu-backdrop" data-action="close-menu" aria-label="노드 메뉴 닫기" hidden></button><div class="wm-orbit-layer" data-ui="menu-layer" hidden></div><div class="wm-drag-layer" data-ui="drag-layer" hidden></div><div class="wm-map-help">빈 곳 드래그로 이동 · 메인 노드는 길게 눌러 순서 변경</div><div class="wm-map-tools"><button type="button" class="wm-btn" data-action="zoom-out" aria-label="지도 축소">−</button><span class="wm-zoom" data-ui="zoom">100%</span><button type="button" class="wm-btn" data-action="zoom-in" aria-label="지도 확대">＋</button><button type="button" class="wm-btn" data-action="fit">전체 보기</button><button type="button" class="wm-btn" data-action="center">선택 노드</button></div></div>
-      <aside class="wm-side" aria-label="채택한 생각 목록"><div class="wm-side-heading">📌 모은 생각 <span data-ui="pin-count">0개</span></div><p class="wm-side-desc">이 글에 활용할 생각을 골라 순서를 정해요.<br>📌는 채택 표시이며, 사실 검증 표시는 아니에요.</p><div class="wm-pin-list" data-ui="pin-list"></div><div class="wm-side-footer"><span class="wm-small" data-ui="pin-footnote">노드 메뉴의 📌로 모아 보세요.</span><button type="button" class="wm-btn wm-primary" data-action="outline" data-ui="outline-open">개요 정리 →</button></div></aside>
+      <div class="wm-map-wrap"><div class="wm-map" data-ui="map" role="region" aria-label="생각 지도. 빈 곳을 드래그해 이동하고 노드에 마우스를 올리거나 눌러 메뉴를 여세요."><div class="wm-world" data-ui="world"><svg class="wm-links" data-ui="links" aria-hidden="true"></svg><div data-ui="nodes"></div></div></div><button type="button" class="wm-menu-backdrop" data-ui="menu-backdrop" data-action="close-menu" aria-label="노드 메뉴 닫기" hidden></button><div class="wm-orbit-layer" data-ui="menu-layer" hidden></div><div class="wm-drag-layer" data-ui="drag-layer" hidden></div><div class="wm-map-help">노드에 마우스를 올려 메뉴 · 메인 노드는 길게 눌러 이동</div><div class="wm-map-tools"><button type="button" class="wm-btn" data-action="zoom-out" aria-label="지도 축소">−</button><span class="wm-zoom" data-ui="zoom">100%</span><button type="button" class="wm-btn" data-action="zoom-in" aria-label="지도 확대">＋</button><button type="button" class="wm-btn" data-action="fit">전체 보기</button><button type="button" class="wm-btn" data-action="center">선택 노드</button></div></div>
+      <aside class="wm-side" data-ui="side" aria-label="노드 대화와 모은 생각">
+        <div class="wm-side-switch" role="tablist" aria-label="오른쪽 패널">
+          <button type="button" class="wm-side-tab" id="wm-side-pins-tab" data-ui="side-pins-tab" role="tab" aria-selected="true" aria-controls="wm-side-pins-panel" data-action="side-tab" data-tab="pins">📌 모은 생각 <span data-ui="pin-count">0개</span></button>
+          <button type="button" class="wm-side-tab" id="wm-side-chat-tab" data-ui="side-chat-tab" role="tab" aria-selected="false" aria-controls="wm-side-chat-panel" data-action="side-tab" data-tab="chat" disabled>대화</button>
+        </div>
+        <section class="wm-pins-panel" id="wm-side-pins-panel" data-ui="pins-panel" role="tabpanel" aria-labelledby="wm-side-pins-tab"><p class="wm-side-desc">이 글에 활용할 생각을 골라 순서를 정해요.<br>📌는 채택 표시이며, 사실 검증 표시는 아니에요.</p><div class="wm-pin-list" data-ui="pin-list"></div><div class="wm-side-footer"><span class="wm-small" data-ui="pin-footnote">노드 메뉴의 📌로 모아 보세요.</span><button type="button" class="wm-btn wm-primary" data-action="outline" data-ui="outline-open">개요 정리 →</button></div></section>
+        <section class="wm-sidebar-chat" id="wm-side-chat-panel" data-ui="chat-panel" role="tabpanel" aria-labelledby="wm-side-chat-tab" hidden></section>
+      </aside>
     </div>
     <footer class="wm-status"><div class="wm-legend"><span>▭ 메인 노드 · 문단</span><span>▭ 서브 노드 · 세부 생각</span><span>↕ 전개</span><span>📌 글에 활용</span></div><span data-ui="save-status">이 화면에서 작업 중</span></footer>
   </section>
@@ -873,7 +941,7 @@
   const example='대학 수업에서 생성형 AI를 어떻게 활용해야 할까?';
   const kindLabel={topic:'주제·질문',claim:'잠정 주장',question:'탐색 질문',idea:'아이디어'};
   const storageKey='writing-map-gpt-demo-v4';
-  let state=null,stored=null,modal=null,chatTab='chat',focusBack=null,toastTimer=null,drag=null,homeVisible=true;
+  let state=null,stored=null,modal=null,chatNodeId=null,sideTab='pins',chatTab='chat',focusBack=null,toastTimer=null,drag=null,homeVisible=true;
   let positions={},newIds=new Set(),view={x:0,y:0,scale:1},drafts={},menuId=null,menuView=null;
   try{stored=migrate(JSON.parse(localStorage.getItem(storageKey)||localStorage.getItem('writing-map-gpt-demo-v3')||localStorage.getItem('writing-map-gpt-demo-v2')||localStorage.getItem('writing-map-gpt-demo-v1')||'null'));if(!valid(stored))stored=null;}catch(e){stored=null;}
   ui('resume').hidden=!stored;
@@ -894,12 +962,12 @@
   function addNode(data,parentId){const parent=getNode(parentId),id='n'+state.nextId++;const node={id,parentId,type:'idea',role:'sub',mainId:ownerMain(parent)?.id||'n1',relation:'expand',origin:'ai',title:'',content:'',method:null,facet:'',pinned:false,messages:[],evaluation:null,branchCount:0,developCount:{before:0,after:0},...data};if(node.role==='main')node.mainId=id;state.nodes.push(node);newIds.add(node.id);if(state.outline)state.outline.stale=true;return node;}
   function start(text,kind){
     text=text.trim();if(!text){ui('start-error').hidden=false;ui('start-error').textContent='첫 문단의 주제나 생각을 입력해 주세요.';return;}
-    cancelMainDrag({restoreView:false,suppressClick:false});closeNodeMenu(false);
+    cancelMainDrag({restoreView:false,suppressClick:false});closeNodeMenu(false);closeModal(false);closeChat(false);
     state={version:4,documentTitle:'',openingSentence:'',purpose:text,originalInput:text,nextId:2,selectedId:'n1',mainOrder:['n1'],pins:[],outline:null,activity:{branched:false,chatted:false,evaluated:false,idea:false,rebranched:false,developed:false},nodes:[{id:'n1',parentId:null,type:kind,role:'main',mainId:'n1',relation:null,title:nodeTitle(text),content:text,origin:'user',method:null,facet:'root',pinned:false,messages:[],evaluation:null,branchCount:0,developCount:{before:0,after:0}}]};
     drafts={};ui('home').classList.add('wm-fold');
     setTimeout(()=>{ui('home').hidden=true;ui('home').classList.remove('wm-fold');ui('workspace').hidden=false;homeVisible=false;render();requestAnimationFrame(()=>{fit();focusNode('n1');});save();},matchMedia('(prefers-reduced-motion:reduce)').matches?0:260);
   }
-  function beginHome(){cancelMainDrag({restoreView:false});closeNodeMenu(false);closeModal(false);homeVisible=true;ui('workspace').hidden=true;ui('home').hidden=false;ui('topic-input').value='';ui('resume').hidden=!state&&!stored;ui('topic-input').focus();}
+  function beginHome(){cancelMainDrag({restoreView:false});closeNodeMenu(false);closeModal(false);closeChat(false);homeVisible=true;ui('workspace').hidden=true;ui('home').hidden=false;ui('topic-input').value='';ui('resume').hidden=!state&&!stored;ui('topic-input').focus();}
   function resume(){state=migrate(state||stored);if(!state)return;homeVisible=false;ui('home').hidden=true;ui('workspace').hidden=false;render();requestAnimationFrame(()=>{fit();focusNode(state.selectedId);});}
   function focusNode(id){root.querySelector('[data-node="'+id+'"] .wm-node-main')?.focus({preventScroll:true});}
   function siblingNodes(node){return state.nodes.filter(n=>n.role==='sub'&&n.parentId===node.parentId);}
@@ -926,7 +994,7 @@
     closeNodeMenu(false);state.mainOrder=next;state.selectedId=id;sortPins();syncOutlineOrder();render();fit();
     root.querySelector('[data-node="'+id+'"]')?.classList.add('wm-snap-in');save();return true;
   }
-  function render(){if(!state)return;sortPins();syncOutlineOrder();renderMap();renderPins();renderGuide();ui('workspace-sub').textContent=state.mainOrder.length+'개 문단 · 메인 노드를 길게 눌러 순서를 바꿀 수 있어요.';ui('outline-open').disabled=state.pins.length===0&&!state.outline;save();}
+  function render(){if(!state)return;sortPins();syncOutlineOrder();renderMap();renderPins();renderGuide();if(chatNodeId)updateChatContext();ui('workspace-sub').textContent=state.mainOrder.length+'개 문단 · 메인 노드를 길게 눌러 순서를 바꿀 수 있어요.';ui('outline-open').disabled=state.pins.length===0&&!state.outline;save();}
   function layout(){
     positions={};let cursor=65;
     const children=new Map(),childGap=45,columnGap=310;
@@ -975,7 +1043,7 @@
     const subLinks=state.nodes.filter(n=>n.role==='sub'&&n.parentId).map(n=>{const p=positions[n.parentId],q=positions[n.id];if(!p||!q)return '';const side=q.cx>=p.cx?1:-1,a=p.cx+side*p.w/2,b=p.cy,c=q.cx-side*q.w/2,d=q.cy;return '<path class="wm-link '+(pathIds.has(n.id)?'wm-link-active ':'')+(isShrunk(n)?'wm-link-muted':'')+'" d="M '+a+' '+b+' C '+(a+side*42)+' '+b+','+(c-side*42)+' '+d+','+c+' '+d+'"/>';}).join('');
     const mainLinks=state.mainOrder.slice(1).map((id,i)=>{const p=positions[state.mainOrder[i]],q=positions[id],x=p.cx,a=p.y+p.h,b=q.y,mid=(a+b)/2;return '<path class="wm-develop-link" d="M '+x+' '+a+' L '+x+' '+(b-10)+' M '+(x-4)+' '+(b-17)+' L '+x+' '+(b-10)+' L '+(x+4)+' '+(b-17)+'"/><text class="wm-link-label" x="'+(x+12)+'" y="'+(mid+4)+'">전개</text>';}).join('');
     ui('links').innerHTML=subLinks+mainLinks;
-    ui('nodes').innerHTML=state.nodes.map(n=>{const p=positions[n.id];if(!p)return '';return '<article class="wm-node '+(n.role==='sub'?'wm-sub ':'')+(isShrunk(n)?'wm-shrunk ':'')+(state.selectedId===n.id?'wm-selected ':'')+(state.pins.includes(n.id)?'wm-pinned ':'')+(newIds.has(n.id)?'wm-new':'')+'" data-node="'+n.id+'" style="left:'+p.x+'px;top:'+p.y+'px;width:'+p.w+'px;height:'+p.h+'px"><button type="button" class="wm-node-main" data-action="node" data-id="'+n.id+'" aria-haspopup="dialog" aria-expanded="'+(menuId===n.id)+'" aria-label="'+esc(n.title)+' · '+(n.role==='main'?'메인 노드. 길게 눌러 문단 순서 변경, Alt와 위아래 화살표로도 이동':'서브 노드')+' · 메뉴 열기">'+nodeInner(n)+'</button></article>';}).join('');
+    ui('nodes').innerHTML=state.nodes.map(n=>{const p=positions[n.id];if(!p)return '';return '<article class="wm-node '+(n.role==='sub'?'wm-sub ':'')+(isShrunk(n)?'wm-shrunk ':'')+(state.selectedId===n.id?'wm-selected ':'')+(sideTab==='chat'&&chatNodeId===n.id?'wm-chatting ':'')+(state.pins.includes(n.id)?'wm-pinned ':'')+(newIds.has(n.id)?'wm-new':'')+'" data-node="'+n.id+'" style="left:'+p.x+'px;top:'+p.y+'px;width:'+p.w+'px;height:'+p.h+'px"><button type="button" class="wm-node-main" data-action="node" data-id="'+n.id+'" aria-controls="wm-node-actions" aria-expanded="'+(menuId===n.id)+'" aria-label="'+esc(n.title)+' · '+(n.role==='main'?'메인 노드. 길게 눌러 문단 순서 변경, Alt와 위아래 화살표로도 이동':'서브 노드')+' · 마우스를 올리거나 눌러 메뉴 열기. 아래 화살표로 조작">'+nodeInner(n)+'</button></article>';}).join('');
     newIds.clear();transform();
   }
   function transform(){ui('world').style.transform='translate('+view.x+'px,'+view.y+'px) scale('+view.scale+')';ui('zoom').textContent=Math.round(view.scale*100)+'%';}
@@ -983,33 +1051,132 @@
   function centerNode(id=state.selectedId){const p=positions[id];if(!p)return;closeNodeMenu(false);const map=ui('map');view.scale=Math.max(.8,view.scale);view.x=map.clientWidth/2-p.cx*view.scale;view.y=map.clientHeight/2-p.cy*view.scale;transform();}
   function zoom(factor,px,py){closeNodeMenu(false);const map=ui('map'),nx=px??map.clientWidth/2,ny=py??map.clientHeight/2,prev=view.scale;view.scale=Math.min(1.6,Math.max(.01,view.scale*factor));view.x=nx-(nx-view.x)*view.scale/prev;view.y=ny-(ny-view.y)*view.scale/prev;transform();}
   function select(id){state.selectedId=id;renderMap();save();}
-  function setMenuInert(on){root.querySelectorAll('.wm-work-head,.wm-guide,.wm-side,.wm-status,.wm-map-tools,[data-ui="map"]').forEach(el=>el.inert=on);}
-  function closeNodeMenu(restore=true){if(!menuId)return;const id=menuId;menuId=null;ui('menu-layer').hidden=true;ui('menu-layer').innerHTML='';ui('menu-backdrop').hidden=true;setMenuInert(false);if(menuView){view={...menuView};menuView=null;transform();}root.querySelector('[data-node="'+id+'"] .wm-node-main')?.setAttribute('aria-expanded','false');if(restore)focusNode(id);}
-  function fanPolygon(inner,outer,start,end){const pts=[],step=3;for(let a=start;a<end;a+=step){const r=a*Math.PI/180;pts.push([(outer+outer*Math.cos(r))/(2*outer)*100,(outer+outer*Math.sin(r))/(2*outer)*100]);}let r=end*Math.PI/180;pts.push([(outer+outer*Math.cos(r))/(2*outer)*100,(outer+outer*Math.sin(r))/(2*outer)*100]);for(let a=end;a>start;a-=step){r=a*Math.PI/180;pts.push([(outer+inner*Math.cos(r))/(2*outer)*100,(outer+inner*Math.sin(r))/(2*outer)*100]);}r=start*Math.PI/180;pts.push([(outer+inner*Math.cos(r))/(2*outer)*100,(outer+inner*Math.sin(r))/(2*outer)*100]);return 'polygon('+pts.map(p=>p.map(v=>v.toFixed(3)+'%').join(' ')).join(',')+')';}
-  function openNodeMenu(id){
-    if(menuId===id){closeNodeMenu();return;}closeNodeMenu(false);const n=getNode(id);if(!n)return;select(id);menuView={...view};menuId=id;
-    const map=ui('map'),w=map.clientWidth,h=map.clientHeight,dimensions=nodeDimensions(n),cardWidth=Math.min(270,w-40),cardHeight=Math.max(104,cardWidth*dimensions.h/dimensions.w);
-    const rawX=positions[id].cx*view.scale+view.x,rawY=positions[id].cy*view.scale+view.y;
-    const menuHeight=cardHeight+174,cx=Math.max(cardWidth/2+12,Math.min(rawX,w-cardWidth/2-12)),cy=Math.max(menuHeight/2+12,Math.min(rawY,h-menuHeight/2-12));
-    ui('menu-backdrop').style.height=h+'px';ui('menu-layer').style.height=h+'px';ui('menu-backdrop').hidden=false;ui('menu-layer').hidden=false;
-    const actions=n.role==='main'?[
-      {a:'develop',direction:'before',angle:-90,label:'↑ 전개',aria:'위 전개 · 앞 문단에 메인 노드 추가'},
-      {a:'chat',angle:-30,label:'대화 열기',aria:'대화 열기'},
-      {a:'expand',angle:30,label:'확장 +4',aria:'세부 생각 4개로 확장'},
-      {a:'develop',direction:'after',angle:90,label:'↓ 전개',aria:'아래 전개 · 다음 문단에 메인 노드 추가'},
-      {a:'pin',angle:150,label:'📌',aria:'글에 활용할 생각 '+(state.pins.includes(id)?'해제':'채택')},
-      {a:'review',angle:210,label:'검토',aria:'아이디어 검토'}
-    ]:[{a:'chat',label:'대화 열기',aria:'대화 열기'},{a:'expand',label:'확장 +2',aria:'세부 생각 2개로 확장'},{a:'pin',label:'📌 글에 활용',aria:'글에 활용할 생각 '+(state.pins.includes(id)?'해제':'채택')},{a:'review',label:'검토',aria:'아이디어 검토'}];
-    const sectors=actions.map(a=>'<button type="button" class="wm-fan-sector '+(a.a==='pin'?'wm-fan-pin':'')+'" data-action="'+a.a+'" data-id="'+id+'" '+(a.direction?'data-direction="'+a.direction+'" ':'')+'aria-label="'+esc(a.aria)+'" '+(a.a==='pin'?'aria-pressed="'+state.pins.includes(id)+'"':'')+'><span>'+a.label+'</span></button>').join('');
-    ui('menu-layer').innerHTML='<div class="wm-orbit" role="dialog" aria-modal="true" aria-label="'+esc(n.title)+' 노드 메뉴" style="left:'+cx+'px;top:'+cy+'px;transform:translate(-50%,-50%)"><button type="button" class="wm-orbit-node '+(n.role==='sub'?'wm-sub ':'')+(state.pins.includes(id)?'wm-pinned':'')+'" data-action="close-menu" aria-label="노드 메뉴 닫기">'+nodeInner(n,false)+'</button><div class="wm-action-menu">'+sectors+'</div></div>';
-    setMenuInert(true);root.querySelector('[data-node="'+id+'"] .wm-node-main')?.setAttribute('aria-expanded','true');requestAnimationFrame(()=>ui('menu-layer').querySelector('[data-action="chat"]')?.focus({preventScroll:true}));
+  // Nonmodal node actions: mouse hover never changes selection, focus or the map view.
+  let menuOpenTimer=null,menuCloseTimer=null,menuSource='explicit',hoverNodeId=null,menuSuppressedId=null,menuPointerDown=false,nodeHoverInitialized=false;
+  function cancelNodeMenuTimers(){clearTimeout(menuOpenTimer);clearTimeout(menuCloseTimer);menuOpenTimer=null;menuCloseTimer=null;}
+  function menuTrigger(id){return root.querySelector('[data-node="'+id+'"] .wm-node-main');}
+  function markNodeMenu(id,on){const trigger=menuTrigger(id);trigger?.setAttribute('aria-expanded',String(on));root.querySelector('[data-node="'+id+'"]')?.classList.toggle('wm-menu-active',on);}
+  function closeNodeMenu(restore=false,options={}){
+    cancelNodeMenuTimers();const id=menuId;if(options.suppress&&id)menuSuppressedId=id;
+    menuId=null;menuView=null;
+    const layer=ui('menu-layer');layer.hidden=true;layer.innerHTML='';ui('menu-backdrop').hidden=true;
+    if(id)markNodeMenu(id,false);
+    if(restore&&id)focusNode(id);
   }
-  function branch(id){closeNodeMenu(false);const n=getNode(id);if(!n)return;const count=n.role==='sub'?2:4,batch=engine.expand(n,ancestors(n),state.purpose,n.branchCount);if(!Array.isArray(batch)||batch.length!==count){toast('질문을 불러오지 못했어요.');return;}batch.forEach(b=>addNode({...b,type:'question',role:'sub',relation:'expand',origin:'ai'},n.id));n.branchCount++;state.activity.branched=true;if(n.role==='sub')state.activity.rebranched=true;state.selectedId=n.id;render();fit();if(modal==='chat')renderChat();toast('확장: 서브 노드 '+count+'개를 추가했어요.');}
+  function dismissNodeMenu(){
+    const layer=ui('menu-layer'),restore=layer.contains(document.activeElement);
+    closeNodeMenu(restore,{suppress:true});
+  }
+  function nodeMenuPlacement(nodeRect,mapWidth,mapHeight,width,height){
+    const margin=12,gap=12,topMargin=12,bottomMargin=66;
+    const maxX=Math.max(margin,mapWidth-width-margin),maxY=Math.max(topMargin,mapHeight-height-bottomMargin);
+    let x,y,side;
+    if(nodeRect.right+gap+width<=mapWidth-margin){x=nodeRect.right+gap;y=nodeRect.cy-height/2;side='right';}
+    else if(nodeRect.left-gap-width>=margin){x=nodeRect.left-gap-width;y=nodeRect.cy-height/2;side='left';}
+    else if(nodeRect.bottom+gap+height<=mapHeight-bottomMargin){x=nodeRect.cx-width/2;y=nodeRect.bottom+gap;side='bottom';}
+    else if(nodeRect.top-gap-height>=topMargin){x=nodeRect.cx-width/2;y=nodeRect.top-gap-height;side='top';}
+    else{side=nodeRect.cy<mapHeight/2?'bottom':'top';x=nodeRect.cx-width/2;y=side==='bottom'?nodeRect.bottom+gap:nodeRect.top-gap-height;}
+    return {x:Math.max(margin,Math.min(x,maxX)),y:Math.max(topMargin,Math.min(y,maxY)),side};
+  }
+  function positionNodeMenu(){
+    if(!menuId)return;const p=positions[menuId],map=ui('map'),panel=ui('menu-layer').querySelector('.wm-hover-menu');if(!p||!panel)return;
+    const width=Math.min(264,Math.max(0,map.clientWidth-24));panel.style.width=width+'px';
+    const measured=panel.getBoundingClientRect(),rows=getNode(menuId)?.role==='main'?3:2;
+    const coarse=matchMedia('(pointer:coarse)').matches,estimated=16+(coarse?44:28)+8+rows*(coarse?44:38)+(rows-1)*6;
+    const height=measured.height>0&&measured.height<=400?measured.height:estimated;
+    const rect={left:p.x*view.scale+view.x,right:(p.x+p.w)*view.scale+view.x,top:p.y*view.scale+view.y,bottom:(p.y+p.h)*view.scale+view.y,cx:p.cx*view.scale+view.x,cy:p.cy*view.scale+view.y};
+    const place=nodeMenuPlacement(rect,map.clientWidth,map.clientHeight,width,height);
+    panel.style.left=place.x+'px';panel.style.top=place.y+'px';panel.dataset.side=place.side;panel.style.visibility='visible';
+    ui('menu-layer').style.height=map.clientHeight+'px';
+  }
+  function nodeMenuBlocked(){return !state||homeVisible||modal||drag||mainDragSession||menuPointerDown||Date.now()<mainDragClickUntil;}
+  function openNodeMenu(id,options={}){
+    if(nodeMenuBlocked())return;const n=getNode(id);if(!n)return;
+    const source=options.source||'explicit';
+    if(source==='mouse'&&menuId&&menuId!==id&&ui('menu-layer').contains(document.activeElement))return;
+    cancelNodeMenuTimers();
+    if(menuId===id){menuSource=source;if(options.focus)ui('menu-layer').querySelector('[data-action="chat"]')?.focus({preventScroll:true});return;}
+    closeNodeMenu(false);menuId=id;menuSource=source;
+    if(source!=='mouse'){
+      state.selectedId=id;root.querySelectorAll('.wm-node').forEach(el=>el.classList.toggle('wm-selected',el.dataset.node===id));save();
+    }
+    const actions=[
+      {a:'chat',label:'대화 열기',aria:'대화 열기'},
+      {a:'review',label:'검토',aria:'아이디어 검토'},
+      {a:'expand',label:'확장 +'+(n.role==='sub'?2:4),aria:'세부 생각 '+(n.role==='sub'?2:4)+'개로 확장'},
+      {a:'pin',label:'📌',aria:'글에 활용할 생각 '+(state.pins.includes(id)?'해제':'채택')}
+    ];
+    if(n.role==='main')actions.push({a:'develop',direction:'before',label:'↑ 위 전개',aria:'위 전개 · 앞 문단에 메인 노드 추가'},{a:'develop',direction:'after',label:'↓ 아래 전개',aria:'아래 전개 · 다음 문단에 메인 노드 추가'});
+    const buttons=actions.map(a=>'<button type="button" class="wm-hover-action" data-action="'+a.a+'" data-id="'+id+'" '+(a.direction?'data-direction="'+a.direction+'" ':'')+'aria-label="'+esc(a.aria)+'" '+(a.a==='pin'?'aria-pressed="'+state.pins.includes(id)+'"':'')+'>'+a.label+'</button>').join('');
+    const layer=ui('menu-layer');ui('menu-backdrop').hidden=true;layer.hidden=false;
+    layer.innerHTML='<div id="wm-node-actions" class="wm-hover-menu" role="group" aria-label="'+esc(n.title)+' 노드 메뉴" data-menu-node="'+id+'" style="visibility:hidden"><div class="wm-hover-heading"><span>'+esc(n.title)+'</span><button type="button" class="wm-hover-edit" data-action="edit" data-id="'+id+'" aria-label="노드 내용 수정">노드 수정</button><button type="button" class="wm-hover-close" data-action="close-menu" aria-label="노드 메뉴 닫기">×</button></div><div class="wm-hover-actions">'+buttons+'</div></div>';
+    markNodeMenu(id,true);positionNodeMenu();
+    if(options.focus)requestAnimationFrame(()=>{if(menuId===id)layer.querySelector('[data-action="chat"]')?.focus({preventScroll:true});});
+  }
+  function requestNodeMenu(id){
+    clearTimeout(menuCloseTimer);menuCloseTimer=null;
+    if(menuSuppressedId===id||nodeMenuBlocked())return;
+    if(menuId&&menuId!==id&&ui('menu-layer').contains(document.activeElement))return;
+    if(menuId===id){clearTimeout(menuOpenTimer);menuOpenTimer=null;return;}
+    clearTimeout(menuOpenTimer);
+    menuOpenTimer=setTimeout(()=>{menuOpenTimer=null;if(hoverNodeId===id&&menuSuppressedId!==id&&!nodeMenuBlocked())openNodeMenu(id,{source:'mouse'});},140);
+  }
+  function scheduleNodeMenuClose(){
+    clearTimeout(menuOpenTimer);menuOpenTimer=null;clearTimeout(menuCloseTimer);
+    menuCloseTimer=setTimeout(()=>{menuCloseTimer=null;if(ui('menu-layer').contains(document.activeElement))return;closeNodeMenu(false);},300);
+  }
+  function initializeNodeHover(){
+    if(nodeHoverInitialized)return;nodeHoverInitialized=true;
+    const hoveredNode=target=>target?.closest?.('.wm-node[data-node]');
+    const inPopup=target=>target?.closest?.('.wm-hover-menu');
+    const mouse=event=>!event.pointerType||event.pointerType==='mouse';
+    root.addEventListener('pointerover',event=>{
+      if(!mouse(event))return;
+      if(inPopup(event.target)){clearTimeout(menuCloseTimer);menuCloseTimer=null;clearTimeout(menuOpenTimer);menuOpenTimer=null;return;}
+      const node=hoveredNode(event.target);if(!node||node.contains(event.relatedTarget))return;
+      const id=node.dataset.node;hoverNodeId=id;if(menuSuppressedId&&menuSuppressedId!==id)menuSuppressedId=null;requestNodeMenu(id);
+    });
+    root.addEventListener('pointerout',event=>{
+      if(!mouse(event))return;
+      const node=hoveredNode(event.target),popup=inPopup(event.target);
+      if(node){
+        if(node.contains(event.relatedTarget))return;
+        const id=node.dataset.node;if(hoverNodeId===id)hoverNodeId=null;if(menuSuppressedId===id)menuSuppressedId=null;
+        if(inPopup(event.relatedTarget)){clearTimeout(menuCloseTimer);menuCloseTimer=null;return;}
+        scheduleNodeMenuClose();
+      }else if(popup&&!popup.contains(event.relatedTarget)){
+        if(hoveredNode(event.relatedTarget)?.dataset.node===menuId){clearTimeout(menuCloseTimer);menuCloseTimer=null;return;}
+        scheduleNodeMenuClose();
+      }
+    });
+    // Registered before the long-press handlers so an open hover menu cannot block dragging.
+    root.addEventListener('pointerdown',event=>{
+      menuPointerDown=true;cancelNodeMenuTimers();
+      if(!inPopup(event.target))closeNodeMenu(false);
+    },true);
+    const release=()=>{menuPointerDown=false;};root.addEventListener('pointerup',release,true);root.addEventListener('pointercancel',release,true);
+    root.addEventListener('pointerleave',event=>{if(event.target===root){hoverNodeId=null;menuSuppressedId=null;menuPointerDown=false;closeNodeMenu(false);}},true);
+    root.addEventListener('focusout',event=>{
+      if(!menuId||!inPopup(event.target))return;
+      if(inPopup(event.relatedTarget)||hoveredNode(event.relatedTarget)?.dataset.node===menuId)return;
+      closeNodeMenu(false);
+    });
+    root.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&menuId&&!modal){event.preventDefault();event.stopPropagation();dismissNodeMenu();return;}
+      if(event.altKey&&['ArrowUp','ArrowDown'].includes(event.key)&&hoveredNode(event.target))closeNodeMenu(false);
+      if(event.key==='ArrowDown'&&!event.altKey&&hoveredNode(event.target)&&!modal){
+        event.preventDefault();openNodeMenu(hoveredNode(event.target).dataset.node,{source:'keyboard',focus:true});
+      }
+    },true);
+    window.addEventListener?.('blur',()=>{menuPointerDown=false;hoverNodeId=null;closeNodeMenu(false);});
+  }
+
+  function branch(id){closeNodeMenu(false);const n=getNode(id);if(!n)return;const count=n.role==='sub'?2:4,batch=engine.expand(n,ancestors(n),state.purpose,n.branchCount);if(!Array.isArray(batch)||batch.length!==count){toast('질문을 불러오지 못했어요.');return;}batch.forEach(b=>addNode({...b,type:'question',role:'sub',relation:'expand',origin:'ai'},n.id));n.branchCount++;state.activity.branched=true;if(n.role==='sub')state.activity.rebranched=true;state.selectedId=n.id;render();fit();if(chatNodeId)updateChatContext();toast('확장: 서브 노드 '+count+'개를 추가했어요.');}
   function develop(id,direction='after'){
     closeNodeMenu(false);const source=getNode(id);if(!source)return;const main=ownerMain(source),dir=direction==='before'?'before':'after';source.developCount=source.developCount||{before:0,after:0};const candidate=engine.develop(source,ancestors(source),state.purpose,dir,source.developCount[dir]);
-    const node=addNode({...candidate,type:'question',role:'main',relation:'develop',origin:'ai',developedFromId:source.id,direction:dir},source.id);const ix=state.mainOrder.indexOf(main.id);state.mainOrder.splice(ix+(dir==='after'?1:0),0,node.id);source.developCount[dir]++;state.activity.developed=true;state.selectedId=node.id;render();fit();if(modal==='chat')openChat(node.id);toast('전개: '+(dir==='before'?'앞':'다음')+' 문단에 대응하는 메인 노드 1개를 추가했어요.');
+    const node=addNode({...candidate,type:'question',role:'main',relation:'develop',origin:'ai',developedFromId:source.id,direction:dir},source.id);const ix=state.mainOrder.indexOf(main.id);state.mainOrder.splice(ix+(dir==='after'?1:0),0,node.id);source.developCount[dir]++;state.activity.developed=true;state.selectedId=node.id;render();fit();if(chatNodeId)updateChatContext();toast('전개: '+(dir==='before'?'앞':'다음')+' 문단에 대응하는 메인 노드 1개를 추가했어요.');
   }
-  function togglePin(id){const wasMenu=menuId===id;closeNodeMenu(false);const n=getNode(id);if(!n)return;const ix=state.pins.indexOf(id);if(ix<0)state.pins.push(id);else state.pins.splice(ix,1);n.pinned=ix<0;if(state.outline)state.outline.stale=true;render();if(modal==='chat')updateChatPin();if(modal==='outline')renderOutline();if(wasMenu)openNodeMenu(id);toast(ix<0?'📌 글에 활용할 생각으로 채택했어요.':'📌 채택을 해제했어요.');}
+  function togglePin(id){closeNodeMenu(false);const n=getNode(id);if(!n)return;const ix=state.pins.indexOf(id);if(ix<0)state.pins.push(id);else state.pins.splice(ix,1);n.pinned=ix<0;if(state.outline)state.outline.stale=true;render();if(chatNodeId)updateChatContext();if(modal==='outline')renderOutline();toast(ix<0?'📌 글에 활용할 생각으로 채택했어요.':'📌 채택을 해제했어요.');}
   function pinListHTML(){
     sortPins();if(!state.pins.length)return '<div class="wm-pin-empty">마음에 드는 세부 생각에<br>📌를 눌러 모아 보세요.</div>';
     return state.mainOrder.map((mainId,mi)=>{const list=state.pins.filter(id=>ownerMain(getNode(id))?.id===mainId);if(!list.length)return '';return '<section class="wm-pin-group"><h3>문단 '+(mi+1)+'</h3>'+list.map(id=>{const n=getNode(id);let depth=0,p=n;while(p&&p.role==='sub'){depth++;p=getNode(p.parentId);}return '<div class="wm-pin-item '+(state.selectedId===id?'wm-current-pin':'')+'" style="--wm-depth:'+Math.min(depth,3)+'"><div class="wm-pin-title"><span>'+(n.role==='main'?'▭':'↳')+'</span><button type="button" data-action="chat" data-id="'+id+'">'+esc(n.title)+'</button><button type="button" class="wm-unpin" data-action="pin" data-id="'+id+'" aria-label="'+esc(short(n.title,28))+' 채택 해제">📌</button></div></div>';}).join('')+'</section>';}).join('');
@@ -1018,30 +1185,85 @@
   function movePin(id,offset){const ix=state.pins.indexOf(id),to=ix+offset;if(ix<0||to<0||to>=state.pins.length)return;[state.pins[ix],state.pins[to]]=[state.pins[to],state.pins[ix]];if(state.outline)state.outline.stale=true;renderPins();save();if(modal==='outline')renderOutline();toast('📌 목록 순서를 바꿨어요. 개요에는 다시 만들 때 반영됩니다.');}
   function guide(){return {text:'<strong>메인 노드는 문단, 서브 노드는 세부 생각.</strong> 확장으로 세부 생각을, ↑↓ 전개로 앞뒤 문단을 더해요.',label:'선택 노드 메뉴'};}
   function renderGuide(){const g=guide();ui('guide-text').innerHTML=g.text;ui('guide-button').textContent=g.label;}
-  function rememberDraft(){if(modal==='chat'&&ui('chat-input'))drafts[state.selectedId]=ui('chat-input').value;}
-  function openModal(name,wide=false){cancelMainDrag();closeNodeMenu(false);rememberDraft();focusBack=document.activeElement;modal=name;ui('overlay').hidden=false;ui('overlay').classList.toggle('wm-centered',name!=='chat');ui('dialog').classList.toggle('wm-wide',wide);ui('dialog').classList.toggle('wm-chat-dialog',name==='chat');ui('overlay').classList.toggle('wm-chat-overlay',name==='chat');root.querySelectorAll('.wm-home,[data-ui="workspace"]').forEach(el=>el.inert=true);}
+  function rememberDraft(){if(chatNodeId&&ui('chat-input'))drafts[chatNodeId]=ui('chat-input').value;}
+  function syncSidePanel(){
+    const chatting=sideTab==='chat'&&Boolean(getNode(chatNodeId));
+    if(!chatting)sideTab='pins';
+    root.classList.toggle('wm-chat-open',chatting);
+    ui('pins-panel').hidden=chatting;ui('chat-panel').hidden=!chatting;
+    ui('side-pins-tab').setAttribute('aria-selected',String(!chatting));
+    ui('side-chat-tab').setAttribute('aria-selected',String(chatting));
+    ui('side-chat-tab').disabled=!getNode(chatNodeId);
+  }
+  function showSideTab(tab,focus=false){
+    rememberDraft();
+    if(tab==='chat'&&!getNode(chatNodeId))return;
+    closeNodeMenu(false);sideTab=tab==='chat'?'chat':'pins';syncSidePanel();
+    if(state)renderMap();
+    if(focus)requestAnimationFrame(()=>{if(!state||homeVisible)return;(sideTab==='chat'?ui('side-chat-tab'):ui('side-pins-tab')).focus({preventScroll:true});});
+  }
+  function closeChat(restore=true){
+    const id=chatNodeId;rememberDraft();chatNodeId=null;sideTab='pins';ui('chat-panel').innerHTML='';syncSidePanel();
+    if(state&&!homeVisible){renderMap();if(restore&&id)requestAnimationFrame(()=>focusNode(id));}
+  }
+  function openModal(name,wide=false){cancelMainDrag();closeNodeMenu(false);rememberDraft();focusBack=document.activeElement;modal=name;ui('overlay').hidden=false;ui('overlay').classList.add('wm-centered');ui('dialog').classList.toggle('wm-wide',wide);root.querySelectorAll('.wm-home,[data-ui="workspace"]').forEach(el=>el.inert=true);}
   function focusModal(){requestAnimationFrame(()=>{const el=ui('dialog').querySelector('button:not(:disabled),input,textarea,select');if(el)el.focus({preventScroll:true});});}
-  function closeModal(restore=true){rememberDraft();modal=null;ui('overlay').hidden=true;ui('overlay').classList.remove('wm-chat-overlay');ui('dialog').classList.remove('wm-chat-dialog');ui('dialog').innerHTML='';root.querySelectorAll('[inert]').forEach(el=>el.inert=false);if(restore){const target=focusBack?.isConnected?focusBack:root.querySelector('[data-node="'+state?.selectedId+'"] .wm-node-main')||ui('topic-input');target?.focus({preventScroll:true});}}
+  function closeModal(restore=true){rememberDraft();modal=null;ui('overlay').hidden=true;ui('dialog').innerHTML='';root.querySelectorAll('[inert]').forEach(el=>el.inert=false);if(restore){const target=focusBack?.isConnected?focusBack:root.querySelector('[data-node="'+state?.selectedId+'"] .wm-node-main')||ui('topic-input');target?.focus({preventScroll:true});}}
   function header(eyebrow,title){return '<div class="wm-dialog-header"><div><p class="wm-small">'+esc(eyebrow)+'</p><h2 id="wm-dialog-title">'+esc(title)+'</h2></div><button type="button" class="wm-close" data-action="close" aria-label="닫고 지도로 돌아가기">×</button></div>';}
-  function openChat(id,tab='chat'){rememberDraft();const n=getNode(id);if(!n)return;openModal('chat');state.selectedId=id;chatTab=tab==='evaluation'?'evaluation':'chat';render();renderChat();focusModal();}
+  function openChat(id,tab='chat',options={}){
+    const n=getNode(id);if(!n)return;
+    rememberDraft();cancelMainDrag();closeNodeMenu(false);if(modal)closeModal(false);
+    chatNodeId=id;sideTab='chat';chatTab=tab==='evaluation'?'evaluation':'chat';state.selectedId=id;syncSidePanel();render();renderChat();
+    requestAnimationFrame(()=>{centerNode(id);(options.focus==='picker'?ui('chat-node-select'):chatTab==='chat'?ui('chat-input'):ui('chat-review-tab'))?.focus({preventScroll:true});});
+  }
   function nodeDisplayContent(n){return n.origin==='ai'?String(n.content||n.title).split(/\n\s*\n/)[0]:n.content||n.title;}
   function displayReply(text){return String(text||'').replace(/^예시 응답\s*[·:]\s*(?:새 아이디어 후보|잠정 검토|생각 이어가기)\s*\n+/,'').replace(/^예시 응답\s*[·:]\s*/,'').replace('에 연결한 시연용 대안입니다.','에 연결한 대안입니다.').replace('AI 예시라는 이유로 더 나은 답으로 취급하지 않습니다.','');}
+  function renderChatNodePicker(){
+    const picker=ui('chat-node-select'),wrapper=ui('chat-node-switcher');if(!picker||!wrapper||!chatNodeId)return;
+    const ordered=orderedNodes();wrapper.hidden=ordered.length<2;
+    picker.innerHTML=state.mainOrder.map((mainId,mi)=>{
+      const main=getNode(mainId);if(!main)return '';
+      const options=ordered.filter(n=>n.mainId===mainId).map(n=>{
+        const parts=[];let current=n;
+        while(current?.role==='sub'){
+          const siblings=siblingNodes(current);parts.unshift(siblings.findIndex(s=>s.id===current.id)+1);current=getNode(current.parentId);
+        }
+        const path=[mi+1,...parts].join('.'),label=(state.pins.includes(n.id)?'📌 ':'')+path+' · '+(n.role==='main'?'메인':'서브')+' · '+n.title;
+        return '<option value="'+n.id+'" '+(n.id===chatNodeId?'selected':'')+'>'+esc(label)+'</option>';
+      }).join('');
+      return '<optgroup label="'+esc('문단 '+(mi+1)+' · '+short(main.title,34))+'">'+options+'</optgroup>';
+    }).join('');
+    picker.value=chatNodeId;
+  }
+  function switchChatNode(id){
+    if(!chatNodeId||!getNode(id)||id===chatNodeId)return;
+    openChat(id,chatTab,{focus:'picker'});
+  }
+
   function renderChatFocus(){
-    const n=getNode(state.selectedId),host=ui('chat-focus');if(!n||!host)return;
-    host.innerHTML='<div class="wm-chat-focus-node '+(n.role==='sub'?'wm-sub ':'')+(state.pins.includes(n.id)?'wm-pinned':'')+'" data-focus-node="'+n.id+'">'+nodeInner(n,false)+'</div><div class="wm-chat-focus-copy"><p class="wm-chat-focus-label">현재 대화 중인 '+(n.role==='main'?'문단 '+(state.mainOrder.indexOf(n.id)+1):'세부 생각')+'</p><div class="wm-chat-focus-content">'+esc(nodeDisplayContent(n))+'</div></div>';
+    const n=getNode(chatNodeId),host=ui('chat-focus');if(!n||!host)return;
+    const parent=ancestors(n)[0],wasOpen=Boolean(host.querySelector('details')?.open);
+    host.innerHTML='<details class="wm-chat-context" '+(wasOpen?'open':'')+'><summary>노드 내용 · 이어진 생각</summary><div class="wm-chat-focus-content" data-focus-node="'+n.id+'">'+esc(nodeDisplayContent(n))+(parent?'\n\n부모 생각: '+esc(parent.title):'')+'\n\n처음 생각: '+esc(state.purpose)+'</div></details>';
+  }
+  function updateChatContext(){
+    const n=getNode(chatNodeId);if(!n||!ui('chat-panel').innerHTML)return;
+    ui('chat-title').textContent=n.title;
+    ui('chat-eyebrow').textContent=(n.role==='main'?'메인 노드 · 문단 '+(state.mainOrder.indexOf(n.id)+1):'서브 노드')+' · '+(n.origin==='ai'?'제안':'내 생각');
+    renderChatFocus();renderChatNodePicker();
   }
   function renderChat(){
-    const n=getNode(state.selectedId);if(!n)return;const parent=ancestors(n)[0];
-    ui('dialog').innerHTML='<aside class="wm-chat-focus" data-ui="chat-focus" aria-label="현재 대화 중인 노드"></aside><div class="wm-chat-panel">'+header((n.role==='main'?'메인 노드 · 문단 '+(state.mainOrder.indexOf(n.id)+1):'서브 노드')+' · '+(n.origin==='ai'?'제안':'내 생각'),n.title)+'<div class="wm-context"><details><summary>이어진 생각 확인</summary><div class="wm-context-body">'+esc(nodeDisplayContent(n))+(parent?'\n\n부모 생각: '+esc(parent.title):'')+'\n\n처음 생각: '+esc(state.purpose)+'</div></details></div><div class="wm-tabs" role="tablist" aria-label="노드 상세"><button type="button" class="wm-tab" id="wm-chat-tab" role="tab" aria-selected="'+(chatTab==='chat')+'" aria-controls="wm-chat-pane" data-action="tab" data-tab="chat">대화 <span class="wm-small">'+n.messages.filter(m=>m.role==='user').length+'</span></button><button type="button" class="wm-tab" id="wm-eval-tab" role="tab" aria-selected="'+(chatTab==='evaluation')+'" aria-controls="wm-eval-pane" data-action="tab" data-tab="evaluation">검토</button></div><div class="wm-chat-view" id="wm-chat-pane" role="tabpanel" aria-labelledby="wm-chat-tab" '+(chatTab!=='chat'?'hidden':'')+'><div class="wm-messages" data-ui="messages"></div><div class="wm-quick"><button type="button" data-action="quick" data-text="이 아이디어를 검토해줘.">검토해 줘</button><button type="button" data-action="quick" data-text="새로운 아이디어를 제안하고 장점과 한계를 알려줘.">다른 아이디어는?</button><button type="button" data-action="quick" data-text="어떤 근거와 반론을 검토해야 할까?">근거·반론 살펴보기</button></div><form class="wm-compose" data-ui="chat-form"><div class="wm-compose-box"><textarea data-ui="chat-input" aria-label="현재 노드에 대한 메시지" maxlength="2000" placeholder="이 생각에 대해 이야기해 보세요."></textarea><button type="submit" class="wm-btn wm-primary">전송</button></div><p class="wm-compose-note">Enter 전송 · Shift+Enter 줄바꿈</p></form></div><div class="wm-tab-content" id="wm-eval-pane" role="tabpanel" aria-labelledby="wm-eval-tab" '+(chatTab!=='evaluation'?'hidden':'')+'></div><div class="wm-dialog-footer"><button type="button" class="wm-btn wm-quiet" data-action="edit" data-id="'+n.id+'">노드 수정</button><div><button type="button" class="wm-btn" data-action="expand" data-id="'+n.id+'">확장 +'+(n.role==='sub'?2:4)+'</button> <button type="button" class="wm-btn" data-action="pin" data-id="'+n.id+'" data-ui="chat-pin"></button></div></div></div>';
-    ui('chat-input').value=drafts[n.id]||'';renderChatFocus();renderMessages();updateChatPin();renderChatPane();
+    const n=getNode(chatNodeId);if(!n)return;
+    ui('chat-panel').innerHTML='<div class="wm-chat-panel"><div class="wm-chat-heading"><div><div class="wm-chat-node-switcher" data-ui="chat-node-switcher"><label for="wm-chat-node-select">대화 노드 변경</label><select class="wm-chat-node-select" id="wm-chat-node-select" data-ui="chat-node-select" aria-label="대화할 노드 선택"></select></div><p class="wm-small" data-ui="chat-eyebrow"></p><h3 id="wm-chat-title" data-ui="chat-title"></h3></div><button type="button" class="wm-close" data-action="close-chat" aria-label="대화 닫기">×</button></div><div class="wm-chat-focus" data-ui="chat-focus" aria-label="현재 대화 중인 노드의 내용과 맥락"></div><div class="wm-tabs" role="tablist" aria-label="현재 노드의 대화와 검토"><button type="button" class="wm-tab" id="wm-chat-tab" role="tab" aria-selected="'+(chatTab==='chat')+'" aria-controls="wm-chat-pane" data-action="tab" data-tab="chat">대화 <span class="wm-small" data-ui="chat-count">'+n.messages.filter(m=>m.role==='user').length+'</span></button><button type="button" class="wm-tab" id="wm-eval-tab" data-ui="chat-review-tab" role="tab" aria-selected="'+(chatTab==='evaluation')+'" aria-controls="wm-eval-pane" data-action="tab" data-tab="evaluation">검토</button></div><div class="wm-chat-view" id="wm-chat-pane" role="tabpanel" aria-labelledby="wm-chat-tab" '+(chatTab!=='chat'?'hidden':'')+'><div class="wm-messages" data-ui="messages" role="log" aria-label="현재 노드의 대화 기록" aria-live="polite" aria-relevant="additions text"></div><div class="wm-quick"><button type="button" data-action="quick" data-text="이 아이디어를 검토해줘.">검토해 줘</button><button type="button" data-action="quick" data-text="새로운 아이디어를 제안하고 장점과 한계를 알려줘.">다른 아이디어는?</button><button type="button" data-action="quick" data-text="어떤 근거와 반론을 검토해야 할까?">근거·반론 살펴보기</button></div><form class="wm-compose" data-ui="chat-form"><div class="wm-compose-box"><textarea data-ui="chat-input" aria-label="현재 노드에 대한 메시지" maxlength="2000" placeholder="이 생각에 대해 이야기해 보세요."></textarea><button type="submit" class="wm-btn wm-primary">전송</button></div><p class="wm-compose-note">Enter 전송 · Shift+Enter 줄바꿈</p></form></div><div class="wm-tab-content" id="wm-eval-pane" role="tabpanel" aria-labelledby="wm-eval-tab" '+(chatTab!=='evaluation'?'hidden':'')+'></div></div>';
+    ui('chat-input').value=drafts[n.id]||'';updateChatContext();renderMessages();renderChatPane();
   }
-  function updateChatPin(){const b=ui('chat-pin');if(b){const on=state.pins.includes(state.selectedId);b.textContent=on?'📌 ✓':'📌';b.setAttribute('aria-label',on?'글에 활용할 생각 채택 해제':'글에 활용할 생각으로 채택');b.setAttribute('aria-pressed',String(on));}if(modal==='chat')renderChatFocus();}
+
   function greeting(n){return n.role==='main'?'이 문단에서 무엇을 설명하고 싶나요? 떠오른 생각이나 더 살펴보고 싶은 부분을 적어주세요.':'“'+n.title+'”에 대해 어떤 생각이 드나요? 더 구체화하거나 다른 가능성을 살펴볼 수 있어요.';}
-  function renderMessages(){const n=getNode(state.selectedId),host=ui('messages');if(!host)return;const first='<div class="wm-message"><div class="wm-message-label">도우미</div><div class="wm-message-text">'+esc(greeting(n))+'</div></div>';host.innerHTML=first+n.messages.map((m,i)=>'<div class="wm-message '+(m.role==='user'?'wm-user':'')+'"><div class="wm-message-label">'+(m.role==='user'?'나':'도우미')+'</div><div class="wm-message-text">'+esc(m.role==='user'?m.text:displayReply(m.text))+'</div>'+(m.role==='user'?'<button type="button" class="wm-save-message" data-action="save-message" data-index="'+i+'">'+(m.savedNodeId?'지도에 남김 · 열기':'내 생각을 노드로 남기기')+'</button>':'')+(m.idea?'<div class="wm-add-idea"><span class="wm-tag">새로운 생각</span><p style="margin-top:7px">'+esc(m.idea.title)+'</p><button type="button" class="wm-btn" data-action="save-idea" data-index="'+i+'">'+(m.savedNodeId?'지도에 남김 · 열기':'이 생각을 노드로 추가')+'</button></div>':'')+'</div>').join('');host.scrollTop=host.scrollHeight;}
-  function send(text){const n=getNode(state.selectedId);text=text.trim();if(!text){toast('생각이나 질문을 입력해 주세요.');return;}n.messages.push({role:'user',text});const response=engine.reply(n,ancestors(n),state.purpose,text);n.messages.push({role:'assistant',text:response.text,...(response.idea?{idea:response.idea}:{})});n.evaluation=null;drafts[n.id]='';state.activity.chatted=true;if(ui('chat-input'))ui('chat-input').value='';if(/평가|검토/.test(text)){ensureEvaluation(n);state.activity.evaluated=true;}renderMessages();renderGuide();save();}
-  function saveMessage(index,ideaMode){const parent=getNode(state.selectedId),m=parent.messages[index];if(!m)return;if(m.savedNodeId){openChat(m.savedNodeId);return;}const data=ideaMode?{...m.idea,origin:'ai'}:{title:nodeTitle(m.text),content:m.text,origin:'user'};const node=addNode({...data,type:'idea',facet:parent.facet,method:ideaMode?parent.method:null},parent.id);m.savedNodeId=node.id;state.activity.idea=true;render();renderMessages();toast('생각을 지도에 남겼어요. 대화와 원래 노드는 유지됩니다.');}
+  function renderMessages(){const n=getNode(chatNodeId),host=ui('messages');if(!n||!host)return;const first='<div class="wm-message"><div class="wm-message-label">도우미</div><div class="wm-message-text">'+esc(greeting(n))+'</div></div>';host.innerHTML=first+n.messages.map((m,i)=>'<div class="wm-message '+(m.role==='user'?'wm-user':'')+'"><div class="wm-message-label">'+(m.role==='user'?'나':'도우미')+'</div><div class="wm-message-text">'+esc(m.role==='user'?m.text:displayReply(m.text))+'</div>'+(m.role==='user'?'<button type="button" class="wm-save-message" data-action="save-message" data-index="'+i+'">'+(m.savedNodeId?'지도에 남김 · 열기':'내 생각을 노드로 남기기')+'</button>':'')+(m.idea?'<div class="wm-add-idea"><span class="wm-tag">새로운 생각</span><p style="margin-top:7px">'+esc(m.idea.title)+'</p><button type="button" class="wm-btn" data-action="save-idea" data-index="'+i+'">'+(m.savedNodeId?'지도에 남김 · 열기':'이 생각을 노드로 추가')+'</button></div>':'')+'</div>').join('');host.scrollTop=host.scrollHeight;ui('chat-count').textContent=n.messages.filter(m=>m.role==='user').length;}
+  function send(text){const n=getNode(chatNodeId);if(!n)return;text=text.trim();if(!text){toast('생각이나 질문을 입력해 주세요.');return;}n.messages.push({role:'user',text});const response=engine.reply(n,ancestors(n),state.purpose,text);n.messages.push({role:'assistant',text:response.text,...(response.idea?{idea:response.idea}:{})});n.evaluation=null;drafts[n.id]='';state.activity.chatted=true;if(ui('chat-input'))ui('chat-input').value='';if(/평가|검토/.test(text)){ensureEvaluation(n);state.activity.evaluated=true;}renderMessages();if(chatTab==='evaluation')renderChatPane();renderGuide();save();}
+  function saveMessage(index,ideaMode){const parent=getNode(chatNodeId);if(!parent)return;const m=parent.messages[index];if(!m)return;if(m.savedNodeId){openChat(m.savedNodeId);return;}const data=ideaMode?{...m.idea,origin:'ai'}:{title:nodeTitle(m.text),content:m.text,origin:'user'};const node=addNode({...data,type:'idea',facet:parent.facet,method:ideaMode?parent.method:null},parent.id);m.savedNodeId=node.id;state.activity.idea=true;render();renderMessages();toast('생각을 지도에 남겼어요. 대화와 원래 노드는 유지됩니다.');}
   function ensureEvaluation(n){if(!n.evaluation)n.evaluation={items:engine.evaluate(n,ancestors(n),state.purpose),messageCount:n.messages.length};return n.evaluation;}
-  function renderChatPane(){const n=getNode(state.selectedId);root.querySelectorAll('.wm-tab[data-action="tab"]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===chatTab)));$('#wm-chat-pane').hidden=chatTab!=='chat';$('#wm-eval-pane').hidden=chatTab!=='evaluation';if(chatTab==='evaluation'){const ev=ensureEvaluation(n);state.activity.evaluated=true;$('#wm-eval-pane').innerHTML='<div class="wm-eval-heading"><span class="wm-tag">'+(n.type==='topic'?'주제의 탐색 가능성':n.type==='question'?'질문의 탐색 가능성':'아이디어의 논증 검토')+'</span><span class="wm-small">잠정 검토</span></div>'+ev.items.map(it=>'<div class="wm-eval-item"><h3>'+esc(it.label)+'</h3><p>'+esc(it.text)+'</p></div>').join('');renderGuide();save();}}
+  function renderChatPane(){const n=getNode(chatNodeId);if(!n)return;root.querySelectorAll('.wm-tab[data-action="tab"]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===chatTab)));$('#wm-chat-pane').hidden=chatTab!=='chat';$('#wm-eval-pane').hidden=chatTab!=='evaluation';if(chatTab==='evaluation'){const ev=ensureEvaluation(n);state.activity.evaluated=true;$('#wm-eval-pane').innerHTML='<div class="wm-eval-heading"><span class="wm-tag">'+(n.type==='topic'?'주제의 탐색 가능성':n.type==='question'?'질문의 탐색 가능성':'아이디어의 논증 검토')+'</span><span class="wm-small">잠정 검토</span></div>'+ev.items.map(it=>'<div class="wm-eval-item"><h3>'+esc(it.label)+'</h3><p>'+esc(it.text)+'</p></div>').join('');renderGuide();save();}}
+
   function openOriginal(){openModal('original');ui('dialog').innerHTML=header('첫 메인 노드의 출발점','처음 입력한 생각')+'<div class="wm-tab-content"><div class="wm-callout" style="white-space:pre-wrap">'+esc(state.originalInput)+'</div><p class="wm-small">처음 입력한 원문입니다. 첫 메인 노드는 직접 수정할 수 있으며, 원문은 이곳에 남습니다.</p><div class="wm-eval-item"><h3>처음 생각·첫 문단 내용</h3><p>'+esc(state.purpose)+'</p></div></div><div class="wm-dialog-footer"><button type="button" class="wm-btn" data-action="edit" data-id="n1">첫 메인 노드 직접 수정</button><button type="button" class="wm-btn wm-primary" data-action="close">지도로 돌아가기</button></div>';focusModal();}
   function openEdit(id){const n=getNode(id);openModal('edit');ui('dialog').dataset.editId=id;ui('dialog').innerHTML=header('직접 수정 · 대화와 자식 노드는 유지','노드 내용 다듬기')+'<form class="wm-tab-content wm-form-stack" data-ui="edit-form"><label>제목<input class="wm-field" name="title" maxlength="100" required value="'+esc(n.title)+'"></label><label>내용<textarea class="wm-field" name="content" rows="7" maxlength="3000" required>'+esc(n.content)+'</textarea></label>'+(id==='n1'?'<label>입력 종류<select class="wm-field" name="kind"><option value="topic" '+(n.type==='topic'?'selected':'')+'>주제·질문</option><option value="claim" '+(n.type==='claim'?'selected':'')+'>잠정 주장</option></select></label>':'')+'<p class="wm-small">수정한 내용은 이후 질문·대화·검토에 반영됩니다. 이미 남긴 대화와 자식 노드는 그때의 기록으로 보존됩니다.</p><button type="submit" class="wm-btn wm-primary">수정 저장</button></form>';focusModal();}
   function saveEdit(form){const n=getNode(ui('dialog').dataset.editId),title=form.elements.title.value.trim(),content=form.elements.content.value.trim();if(!title||!content){toast('제목과 내용을 입력해 주세요.');return;}n.title=title;n.content=content;n.edited=true;n.method=null;n.evaluation=null;state.nodes.forEach(child=>{if(ancestors(child).some(parent=>parent.id===n.id))child.evaluation=null;});if(n.id==='n1'){state.purpose=content;n.type=form.elements.kind.value;}if(state.outline)state.outline.stale=true;render();openChat(n.id);toast('직접 수정한 내용을 저장했어요.');}
@@ -1199,9 +1421,11 @@
     const a=b.dataset.action,id=b.dataset.id;
     if(a==='example'){ui('topic-input').value=example;start(example,'topic');}
     else if(a==='resume')resume();else if(a==='home')beginHome();else if(a==='original')openOriginal();else if(a==='close')closeModal();
-    else if(a==='guide')openNodeMenu(state.selectedId);
-    else if(a==='node')openNodeMenu(id);
-    else if(a==='close-menu')closeNodeMenu();
+    else if(a==='guide')openNodeMenu(state.selectedId,{source:'keyboard',focus:true});
+    else if(a==='node')openNodeMenu(id,{source:e.detail===0?'keyboard':'click',focus:e.detail===0});
+    else if(a==='close-menu')dismissNodeMenu();
+    else if(a==='close-chat')closeChat();
+    else if(a==='side-tab')showSideTab(b.dataset.tab);
     else if(a==='chat'||a==='source')openChat(id);
     else if(a==='review')openChat(id,'evaluation');
     else if(a==='expand')branch(id);
@@ -1214,22 +1438,29 @@
     else if(a==='edit')openEdit(id);else if(a==='outline')openOutline();else if(a==='generate-outline')generateOutline();else if(a==='confirm-outline')generateOutline(true);else if(a==='cancel-regenerate')ui('regenerate-confirm').hidden=true;else if(a==='copy-outline')copyOutline();
   });
   root.addEventListener('submit',e=>{if(e.target===ui('start-form')){e.preventDefault();start(ui('topic-input').value,root.querySelector('input[name="wm-kind"]:checked').value);}else if(e.target===ui('chat-form')){e.preventDefault();send(ui('chat-input').value);}else if(e.target===ui('edit-form')){e.preventDefault();saveEdit(e.target);}});
-  root.addEventListener('input',e=>{if(e.target===ui('chat-input'))drafts[state.selectedId]=e.target.value;if(e.target.dataset.outlineField){const f=e.target.dataset.outlineField,index=e.target.dataset.outlineIndex;if(f==='name'){state.outline.name=e.target.value;state.documentTitle=e.target.value;}else state.outline.sections[+index][f]=e.target.value;state.outline.dirty=true;ui('outline-edit-status').textContent='직접 수정한 초안 · 자동 저장';save();}});
+  root.addEventListener('change',e=>{if(e.target===ui('chat-node-select'))switchChatNode(e.target.value);});
+  root.addEventListener('input',e=>{if(e.target===ui('chat-input'))drafts[chatNodeId]=e.target.value;if(e.target.dataset.outlineField){const f=e.target.dataset.outlineField,index=e.target.dataset.outlineIndex;if(f==='name'){state.outline.name=e.target.value;state.documentTitle=e.target.value;}else state.outline.sections[+index][f]=e.target.value;state.outline.dirty=true;ui('outline-edit-status').textContent='직접 수정한 초안 · 자동 저장';save();}});
   root.addEventListener('keydown',e=>{
     if((e.target===ui('topic-input')||e.target===ui('chat-input'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();if(e.target===ui('topic-input'))start(e.target.value,root.querySelector('input[name="wm-kind"]:checked').value);else send(e.target.value);}
-    if(e.key==='Escape'){if(modal){e.preventDefault();closeModal();}else if(menuId){e.preventDefault();closeNodeMenu();}}
-    const host=modal?ui('dialog'):menuId?ui('menu-layer'):null;
+    if(e.key==='Escape'){if(modal){e.preventDefault();closeModal();}else if(menuId){e.preventDefault();dismissNodeMenu();}else if(chatNodeId&&sideTab==='chat'){e.preventDefault();closeChat();}}
+    const host=modal?ui('dialog'):null;
     if(host&&e.key==='Tab'){const fs=[...host.querySelectorAll('button:not(:disabled),input,textarea,select,a[href]')].filter(el=>!el.closest('[hidden]'));if(fs.length){const first=fs[0],last=fs[fs.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}}
-    if(e.target.classList.contains('wm-tab')&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();const tabs=[...root.querySelectorAll('.wm-tab')],i=tabs.indexOf(e.target),next=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];rememberDraft();chatTab=next.dataset.tab;renderChatPane();next.focus();}
+    const tab=e.target.closest?.('[role="tab"]');
+    if(tab&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){
+      const list=tab.closest('[role="tablist"]'),tabs=[...list.querySelectorAll('[role="tab"]')].filter(t=>!t.disabled),i=tabs.indexOf(tab),next=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];
+      if(next){e.preventDefault();if(next.dataset.action==='side-tab')showSideTab(next.dataset.tab);else{rememberDraft();chatTab=next.dataset.tab;renderChatPane();}next.focus({preventScroll:true});}
+    }
   });
   root.addEventListener('focusin',e=>{const el=e.target.closest('.wm-node');if(el&&!modal&&!menuId){state.selectedId=el.dataset.node;root.querySelectorAll('.wm-node').forEach(n=>n.classList.toggle('wm-selected',n===el));const p=positions[el.dataset.node],m=ui('map');if(p&&(p.x*view.scale+view.x<0||(p.x+p.w)*view.scale+view.x>m.clientWidth||p.y*view.scale+view.y<0||(p.y+p.h)*view.scale+view.y>m.clientHeight))centerNode(el.dataset.node);}});
-  ui('map').addEventListener('pointerdown',e=>{if(mainDragActive()||menuId||e.target.closest('.wm-node')||e.button!==0)return;drag={x:e.clientX,y:e.clientY,vx:view.x,vy:view.y};ui('map').setPointerCapture(e.pointerId);ui('map').classList.add('wm-dragging');});
+  ui('map').addEventListener('pointerdown',e=>{if(modal||mainDragActive()||e.target.closest('.wm-node')||e.button!==0)return;closeNodeMenu(false);drag={x:e.clientX,y:e.clientY,vx:view.x,vy:view.y};ui('map').setPointerCapture(e.pointerId);ui('map').classList.add('wm-dragging');});
   ui('map').addEventListener('pointermove',e=>{if(!drag)return;view.x=drag.vx+e.clientX-drag.x;view.y=drag.vy+e.clientY-drag.y;transform();});
   const endDrag=()=>{drag=null;ui('map').classList.remove('wm-dragging');};ui('map').addEventListener('pointerup',endDrag);ui('map').addEventListener('pointercancel',endDrag);
   ui('map').addEventListener('wheel',e=>{if(!e.ctrlKey&&!e.metaKey)return;e.preventDefault();const r=ui('map').getBoundingClientRect();zoom(e.deltaY<0?1.08:1/1.08,e.clientX-r.left,e.clientY-r.top);},{passive:false});
-  new ResizeObserver(()=>{if(!state||homeVisible||modal||mainDragActive())return;if(menuId){const id=menuId;closeNodeMenu(false);openNodeMenu(id);}else fit();}).observe(ui('map'));
+  new ResizeObserver(()=>{if(!state||homeVisible||modal||mainDragActive())return;closeNodeMenu(false);fit();}).observe(ui('map'));
+  initializeNodeHover();
   initializeMainDrag();
-  root.__writingDemo={get state(){return state;},get menuId(){return menuId;},engine,start,resume,branch,expand:branch,develop,openNodeMenu,closeNodeMenu,openChat,send,saveMessage,togglePin,movePin,openOutline,generateOutline,closeModal,positions:()=>positions,nodeDimensions,valid,migrate,reorderMain,orderedNodes,sortPins,isShrunk,mainDragActive,mainDropBefore,cancelMainDrag};
+  syncSidePanel();
+  root.__writingDemo={get state(){return state;},get menuId(){return menuId;},get chatNodeId(){return chatNodeId;},get sideTab(){return sideTab;},engine,start,resume,branch,expand:branch,develop,openNodeMenu,closeNodeMenu,dismissNodeMenu,nodeMenuPlacement,positionNodeMenu,openChat,switchChatNode,closeChat,showSideTab,send,saveMessage,togglePin,movePin,openOutline,generateOutline,closeModal,positions:()=>positions,nodeDimensions,valid,migrate,reorderMain,orderedNodes,sortPins,isShrunk,mainDragActive,mainDropBefore,cancelMainDrag};
   })();
   </script>
 </div>
